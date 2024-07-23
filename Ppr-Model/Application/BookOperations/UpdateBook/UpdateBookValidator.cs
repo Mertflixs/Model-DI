@@ -4,16 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace Ppr_Model.BookOperations.CreateBook
+namespace Ppr_Model.Application.BookOperations.UpdateBook
 {
-    public class CreateBookValidator : AbstractValidator<CreateBook>
+    public class UpdateBookValidator : AbstractValidator<UpdateBook>
     {
-        public CreateBookValidator()
+        public UpdateBookValidator()
         {
             RuleFor(command => command.Model.GenreId).GreaterThan(0);
             RuleFor(command => command.Model.PageCount).GreaterThan(0);
             RuleFor(command => command.Model.PublishDate).NotEmpty().LessThan(DateTime.Now.Date);
-            RuleFor(command => command.Model.Title).NotEmpty().MinimumLength(4);
+            RuleFor(command => command.Model.Title).NotEmpty().MinimumLength(2);
         }
     }
 }

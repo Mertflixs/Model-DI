@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace Ppr_Model.BookOperations.DeleteBook
+namespace Ppr_Model.Application.BookOperations.DeleteBook
 {
     public class DeleteBookValidator : AbstractValidator<DeleteBook>
     {

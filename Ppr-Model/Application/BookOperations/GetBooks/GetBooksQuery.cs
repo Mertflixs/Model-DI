@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Ppr_Model.Entity;
 using Ppr_Model.Common;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
-namespace Ppr_Model.BookOperations.GetBooks
+
+namespace Ppr_Model.Application.BookOperations.GetBooks
 {
     public class GetBooksQuery
     {
@@ -23,7 +25,7 @@ namespace Ppr_Model.BookOperations.GetBooks
 
         public List<BooksViewModel> Handle()
         {
-            var bookList = _dbContext.Books.OrderBy(x => x.Id).ToList();
+            var bookList = _dbContext.Books.Include(x => x.Genre).OrderBy(x => x.Id).ToList();
             List<BooksViewModel> vm = _mapper.Map<List<BooksViewModel>>(bookList);
 
             return vm;

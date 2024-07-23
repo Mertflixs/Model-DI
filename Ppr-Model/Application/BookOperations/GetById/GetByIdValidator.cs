@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace Ppr_Model.BookOperations.GetById
+namespace Ppr_Model.Application.BookOperations.GetById
 {
     public class GetByIdValidator : AbstractValidator<GetById>
     {

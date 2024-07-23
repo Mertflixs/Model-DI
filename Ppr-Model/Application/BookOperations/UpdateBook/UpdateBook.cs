@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Ppr_Model.Entity;
 using Ppr_Model.Common;
 
-namespace Ppr_Model.BookOperations.UpdateBook
+namespace Ppr_Model.Application.BookOperations.UpdateBook
 {
     public class UpdateBook
     {

@@ -8,7 +8,7 @@ using Ppr_Model.Entity;
 using Ppr_Model.Common;
 using AutoMapper;
 
-namespace Ppr_Model.BookOperations.CreateBook
+namespace Ppr_Model.Application.BookOperations.CreateBook
 {
     public class CreateBook
     {

@@ -18,6 +18,21 @@ namespace Ppr_Model.DBOperations
                     return; // Veritabanı zaten verilerle doluysa, işlem yapmadan çık.
                 }
 
+                context.Genres.AddRange(
+                    new Genre
+                    {
+                        Name = "Personal Growth"
+                    },
+                    new Genre
+                    {
+                        Name = "Fiction"
+                    },
+                    new Genre
+                    {
+                        Name = "Roman"
+                    }
+                );
+
                 context.Books.AddRange(
                     new Book
                     {

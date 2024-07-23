@@ -6,39 +6,28 @@ using Ppr_Model.DBOperations;
 using Microsoft.AspNetCore.Mvc;
 using Ppr_Model.Entity;
 using Ppr_Model.Common;
-using AutoMapper;
 
-namespace Ppr_Model.BookOperations.GetById
+namespace Ppr_Model.Application.BookOperations.DeleteBook
 {
-    public class GetById
+    public class DeleteBook
     {
-
         private readonly BookStoreDbContext _dbContext;
-        private readonly IMapper _mapper;
         public int bookId { get; set; }
 
-        public GetById(BookStoreDbContext dbContext, int id, IMapper mapper)
+        public DeleteBook(BookStoreDbContext dbContext, int id)
         {
-            bookId = id;
             _dbContext = dbContext;
-            _mapper = mapper;
+            bookId = id;
         }
-        public BookViewModel Handle()
+        public void Handle()
         {
             var book = _dbContext.Books.SingleOrDefault(x => x.Id == bookId);
             if (book is null)
             {
                 throw new InvalidOperationException("Kitap mevcut değil");
             }
-            var vm = _mapper.Map<BookViewModel>(book);
-            return vm;
+            _dbContext.Books.Remove(book);
+            _dbContext.SaveChanges();
         }
-    }
-    public class BookViewModel
-    {
-        public string Title { get; set; }
-        public string Genre { get; set; }
-        public int PageCount { get; set; }
-        public string PublishDate { get; set; }
     }
 }
