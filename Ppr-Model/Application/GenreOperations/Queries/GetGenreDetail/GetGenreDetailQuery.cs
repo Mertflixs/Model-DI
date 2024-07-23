@@ -29,7 +29,7 @@ namespace Ppr_Model.Application.GenreOperations.Queries.GetGenreDetail
 
             if (genre is null)
                 throw new InvalidOperationException("Not found Genre!");
-            
+
             return _mapper.Map<GenreDetailViewModel>(genre);
         }
 

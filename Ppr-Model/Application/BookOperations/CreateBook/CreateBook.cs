@@ -30,12 +30,7 @@ namespace Ppr_Model.Application.BookOperations.CreateBook
                 throw new InvalidOperationException("Mevcut");
             
             book = _mapper.Map<Book>(Model);
-            /* book = new Book();
-            book.Title = Model.Title;
-            book.GenreId = Model.GenreId;
-            book.PublishDate = Model.PublishDate;
-            book.PageCount = Model.PageCount; */
-
+            
             _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
         }

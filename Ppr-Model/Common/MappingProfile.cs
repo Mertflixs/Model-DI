@@ -9,6 +9,10 @@ using Ppr_Model.Application.BookOperations.GetById;
 using Ppr_Model.Application.BookOperations.GetBooks;
 using Ppr_Model.Application.GenreOperations.Queries.GetGenre;
 using Ppr_Model.Application.GenreOperations.Queries.GetGenreDetail;
+using Ppr_Model.Application.AuthorOperations.Query.GetAuthor;
+using Ppr_Model.Application.AuthorOperations.Query.GetAuthorDetail;
+using Ppr_Model.Application.AuthorOperations.Commands.CreateAuthor;
+using Ppr_Model.Application.AuthorOperations.Commands.UpdateAuthor;
 
 
 namespace Ppr_Model.Common
@@ -23,6 +27,11 @@ namespace Ppr_Model.Common
 
             CreateMap<Genre, GenresViewModel>();
             CreateMap<Genre, GenreDetailViewModel>();
+
+            CreateMap<Author, AuthorViewModel>();
+            CreateMap<Author, AuthorDetailViewModel>();
+            CreateMap<CreateAuthorModel, Author>();
+            CreateMap<UpdateAuthorModel, Author>();
         }
     }
 }

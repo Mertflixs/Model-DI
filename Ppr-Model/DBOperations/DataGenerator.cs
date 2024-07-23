@@ -18,6 +18,33 @@ namespace Ppr_Model.DBOperations
                     return; // Veritabanı zaten verilerle doluysa, işlem yapmadan çık.
                 }
 
+                context.Author.AddRange(
+                    new Author
+                    {
+                        Name = "Test1",
+                        Lastname = "Test1",
+                        Birthdate = new DateTime(1999, 12, 13)
+                    },
+                    new Author
+                    {
+                        Name = "Test2",
+                        Lastname = "Test2",
+                        Birthdate = new DateTime(1999, 12, 13)
+                    },
+                    new Author
+                    {
+                        Name = "Test3",
+                        Lastname = "Test3",
+                        Birthdate = new DateTime(1999, 12, 13)
+                    },
+                    new Author
+                    {
+                        Name = "Test4",
+                        Lastname = "Test4",
+                        Birthdate = new DateTime(1999, 12, 13)
+                    }
+                );
+
                 context.Genres.AddRange(
                     new Genre
                     {
