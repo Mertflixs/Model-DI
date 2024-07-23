@@ -143,3 +143,4 @@
 /Users/mertflix/Desktop/ppr-bootcamp/week-4/exam-2/Model-DI/Ppr-Model/obj/Debug/net8.0/Ppr-Model.genruntimeconfig.cache
 /Users/mertflix/Desktop/ppr-bootcamp/week-4/exam-2/Model-DI/Ppr-Model/obj/Debug/net8.0/ref/Ppr-Model.dll
 /Users/mertflix/Desktop/ppr-bootcamp/week-4/exam-2/Model-DI/Ppr-Model/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/mertflix/Desktop/ppr-bootcamp/week-4/exam-2/Model-DI/Ppr-Model/obj/Debug/net8.0/Ppr-Model.sourcelink.json

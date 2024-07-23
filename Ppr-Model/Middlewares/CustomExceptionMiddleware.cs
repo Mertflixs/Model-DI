@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using System.Net;
+using Ppr_Model.Services;
 
 namespace Ppr_Model.Middlewares
 {
@@ -14,9 +15,12 @@ namespace Ppr_Model.Middlewares
     {
         private readonly RequestDelegate _next;
 
-        public CustomExceptionMiddleware(RequestDelegate next)
+        private readonly ILoggerService _loggerService;
+
+        public CustomExceptionMiddleware(RequestDelegate next, ILoggerService loggerService)
         {
             _next = next;
+            _loggerService = loggerService;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -25,13 +29,13 @@ namespace Ppr_Model.Middlewares
             try
             {
                 string message = "[Request] HTTP " + context.Request.Method + " - " + context.Request.Path;
-                Console.WriteLine(message);
+                _loggerService.Write(message);
 
                 await _next(context);
                 watch.Stop();
 
                 message = "[Request] HTTP " + context.Request.Method + " - " + context.Request.Path + " responsed " + context.Response.StatusCode + " in " + watch.Elapsed.TotalMilliseconds + " ms.";
-                Console.WriteLine(message);
+                _loggerService.Write(message);
             }
             catch (Exception ex)
             {
@@ -43,9 +47,9 @@ namespace Ppr_Model.Middlewares
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            
+
             string message = "[Error] HTTP " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message: " + ex.Message + " in " + watch.Elapsed.TotalMilliseconds;
-            Console.WriteLine(message);
+            _loggerService.Write(message);
 
 
             var res = JsonConvert.SerializeObject(new { error = ex.Message }, Formatting.None);

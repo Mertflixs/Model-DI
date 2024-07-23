@@ -7,6 +7,7 @@ using System.Reflection;
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using Ppr_Model.Middlewares;
+using Ppr_Model.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BookStoreDbContext>(option => option.UseInMemoryDatabase(databaseName: "BookStoreDB"));
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
 
 var app = builder.Build();
 
