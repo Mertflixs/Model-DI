@@ -20,10 +20,10 @@ namespace Ppr_Model.Controllers
     [Route("[controller]s")]
     public class BookControllers : ControllerBase
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public BookControllers(BookStoreDbContext context, IMapper mapper)
+        public BookControllers(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

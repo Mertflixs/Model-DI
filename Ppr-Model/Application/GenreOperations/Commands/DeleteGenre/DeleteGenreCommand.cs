@@ -13,9 +13,9 @@ namespace Ppr_Model.Application.GenreOperations.Commands.DeleteGenre
     public class DeleteGenreCommand
     {
         public int GenreId;
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public DeleteGenreCommand(BookStoreDbContext context, int Id)
+        public DeleteGenreCommand(IBookStoreDbContext context, int Id)
         {
             _context = context;
             GenreId = Id;

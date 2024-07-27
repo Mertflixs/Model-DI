@@ -15,11 +15,11 @@ namespace Ppr_Model.Application.BookOperations.GetById
     public class GetById
     {
 
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public int bookId { get; set; }
 
-        public GetById(BookStoreDbContext dbContext, int id, IMapper mapper)
+        public GetById(IBookStoreDbContext dbContext, int id, IMapper mapper)
         {
             bookId = id;
             _dbContext = dbContext;

@@ -13,10 +13,10 @@ namespace Ppr_Model.Application.BookOperations.CreateBook
     public class CreateBook
     {
         public CreateBookModel Model { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public CreateBook(BookStoreDbContext dbContext, IMapper mapper)
+        public CreateBook(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

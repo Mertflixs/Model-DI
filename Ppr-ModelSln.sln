@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ppr-Model", "Ppr-Model\Ppr-Model.csproj", "{CEC82D4E-2FE3-456B-9D23-3E18D88FF07A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestUnit", "TestUnit", "{39F1E5F2-F3EA-4CEE-BE3B-C96482C8F009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PprModel.UnitTest", "TestUnit\PprModel.UnitTest\PprModel.UnitTest.csproj", "{5693FF04-7FFF-4B87-A612-7C2EB130254E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{CEC82D4E-2FE3-456B-9D23-3E18D88FF07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEC82D4E-2FE3-456B-9D23-3E18D88FF07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEC82D4E-2FE3-456B-9D23-3E18D88FF07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5693FF04-7FFF-4B87-A612-7C2EB130254E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5693FF04-7FFF-4B87-A612-7C2EB130254E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5693FF04-7FFF-4B87-A612-7C2EB130254E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5693FF04-7FFF-4B87-A612-7C2EB130254E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5693FF04-7FFF-4B87-A612-7C2EB130254E} = {39F1E5F2-F3EA-4CEE-BE3B-C96482C8F009}
 	EndGlobalSection
 EndGlobal

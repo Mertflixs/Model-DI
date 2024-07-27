@@ -9,10 +9,10 @@ namespace Ppr_Model.Application.GenreOperations.Commands.UpdateGenre
         public int GenreId { get; set; }
         public UpdateGenreModel Model { get; set; }
 
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
         // Constructor
-        public UpdateGenreCommand(BookStoreDbContext context, int id)
+        public UpdateGenreCommand(IBookStoreDbContext context, int id)
         {
             _context = context;
             GenreId = id;

@@ -12,8 +12,8 @@ namespace Ppr_Model.Application.BookOperations.UpdateBook
     public class UpdateBook
     {
         public UpdateBookModel Model { get; set; }
-        private readonly BookStoreDbContext _dbContext;
-        public UpdateBook(BookStoreDbContext dbContext)
+        private readonly IBookStoreDbContext _dbContext;
+        public UpdateBook(IBookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }

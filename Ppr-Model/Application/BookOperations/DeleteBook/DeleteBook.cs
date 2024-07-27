@@ -11,10 +11,10 @@ namespace Ppr_Model.Application.BookOperations.DeleteBook
 {
     public class DeleteBook
     {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         public int bookId { get; set; }
 
-        public DeleteBook(BookStoreDbContext dbContext, int id)
+        public DeleteBook(IBookStoreDbContext dbContext, int id)
         {
             _dbContext = dbContext;
             bookId = id;

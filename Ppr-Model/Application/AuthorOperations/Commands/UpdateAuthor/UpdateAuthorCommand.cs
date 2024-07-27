@@ -14,10 +14,10 @@ namespace Ppr_Model.Application.AuthorOperations.Commands.UpdateAuthor
     {
         public int AuthorId;
         public UpdateAuthorModel Model { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public UpdateAuthorCommand(BookStoreDbContext context, IMapper mapper, int id)
+        public UpdateAuthorCommand(IBookStoreDbContext context, IMapper mapper, int id)
         {
             _context = context;
             _mapper = mapper;

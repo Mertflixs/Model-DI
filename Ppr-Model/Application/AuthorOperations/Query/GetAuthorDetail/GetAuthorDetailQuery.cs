@@ -13,10 +13,10 @@ namespace Ppr_Model.Application.AuthorOperations.Query.GetAuthorDetail
     public class GetAuthorDetailQuery
     {
         public int _AuthorId;
-        public readonly BookStoreDbContext _context;
+        public readonly IBookStoreDbContext _context;
         public readonly IMapper _mapper;
 
-        public GetAuthorDetailQuery(BookStoreDbContext context, IMapper mapper, int AuthorId)
+        public GetAuthorDetailQuery(IBookStoreDbContext context, IMapper mapper, int AuthorId)
         {
             _context = context;
             _mapper = mapper;

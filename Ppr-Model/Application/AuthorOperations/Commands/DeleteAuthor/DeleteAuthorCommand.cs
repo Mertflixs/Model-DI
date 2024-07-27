@@ -14,9 +14,9 @@ namespace Ppr_Model.Application.AuthorOperations.Commands.DeleteAuthor
     {
         public int AuthorId;
 
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public DeleteAuthorCommand(BookStoreDbContext context, int Id)
+        public DeleteAuthorCommand(IBookStoreDbContext context, int Id)
         {
             _context = context;
             AuthorId = Id;

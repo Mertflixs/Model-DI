@@ -12,10 +12,10 @@ namespace Ppr_Model.Application.GenreOperations.Queries.GetGenre
 {
     public class GetGenreQuery
     {
-        public readonly BookStoreDbContext _context;
+        public readonly IBookStoreDbContext _context;
         public readonly IMapper _mapper;
         
-        public GetGenreQuery(BookStoreDbContext context, IMapper mapper) {
+        public GetGenreQuery(IBookStoreDbContext context, IMapper mapper) {
             _context = context;
             _mapper = mapper;
         }
